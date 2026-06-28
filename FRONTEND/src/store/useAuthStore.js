@@ -8,7 +8,7 @@ import {
   getTabId,
 } from "../utils/sessionAuth";
 
-const SOCKET_URL = "http://localhost:5001";
+const SOCKET_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
 
 const getErrorMessage = (error, fallback = "Something went wrong") =>
   error?.response?.data?.message || error?.message || fallback;
